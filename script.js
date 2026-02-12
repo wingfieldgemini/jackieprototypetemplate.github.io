@@ -1,28 +1,39 @@
 /* ========================================
-   THE BEATGIRLS — Premium Pitch Website JS
+   THE BEATGIRLS — Premium Multi-Page Website JS
    ======================================== */
 
 (function () {
   'use strict';
 
-  // --- Loading Screen ---
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('loader').classList.add('hidden');
-      document.body.style.overflow = '';
+  const isHome = document.body.dataset.page === 'home';
+
+  // --- Loading Screen (home page only) ---
+  if (isHome && document.getElementById('loader')) {
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        document.body.style.overflow = '';
+        initAll();
+      }, 2200);
+    });
+  } else {
+    // Non-home pages: init immediately when DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else {
       initAll();
-    }, 2200);
-  });
-  document.body.style.overflow = 'hidden';
+    }
+  }
 
   function initAll() {
     initReveal();
     initNavbar();
     initMobileNav();
-    initSparkleCanvas();
+    if (isHome) initSparkleCanvas();
     initCustomCursor();
     initFloatingNotes();
-    initParallax();
+    if (isHome) initParallax();
     initCountUp();
     initFormEffects();
     initSmoothScroll();
@@ -30,30 +41,8 @@
 
   // --- Intersection Observer Reveal ---
   function initReveal() {
-    const els = document.querySelectorAll('.reveal');
-    let delay = 0;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
-          let stagger = 0;
-          siblings.forEach((sib) => {
-            if (sib.getBoundingClientRect().top === entry.target.getBoundingClientRect().top ||
-                Math.abs(sib.getBoundingClientRect().top - entry.target.getBoundingClientRect().top) < 100) {
-              // same row - stagger
-            }
-          });
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, stagger);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    // Stagger reveals in same parent
     const groups = new Map();
-    els.forEach((el) => {
+    document.querySelectorAll('.reveal').forEach((el) => {
       const parent = el.parentElement;
       if (!groups.has(parent)) groups.set(parent, []);
       groups.get(parent).push(el);
@@ -77,6 +66,9 @@
   // --- Sticky Navbar ---
   function initNavbar() {
     const nav = document.getElementById('navbar');
+    if (!nav) return;
+    // On inner pages, navbar starts scrolled; on home, toggle on scroll
+    if (!isHome) return;
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
@@ -93,6 +85,7 @@
   function initMobileNav() {
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('active');
       links.classList.toggle('open');
@@ -108,6 +101,7 @@
   // --- Sparkle Canvas ---
   function initSparkleCanvas() {
     const canvas = document.getElementById('sparkleCanvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
     const colors = ['#E91E8C', '#D4AF37', '#FF2D87', '#F5D778', '#ffffff', '#4A0E4E'];
@@ -145,7 +139,6 @@
         ctx.fillStyle = this.color;
         ctx.globalAlpha = this.currentOpacity;
         ctx.fill();
-        // glow
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
@@ -170,6 +163,7 @@
   function initCustomCursor() {
     if (window.matchMedia('(hover: none)').matches) return;
     const cursor = document.getElementById('cursor');
+    if (!cursor) return;
     let cx = -100, cy = -100, tx = -100, ty = -100;
 
     document.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
@@ -183,8 +177,7 @@
     }
     updateCursor();
 
-    // Hover effect on interactive elements
-    const interactives = document.querySelectorAll('a, button, .show-card, .gallery-item, .testimonial-card, .play-button');
+    const interactives = document.querySelectorAll('a, button, .show-card, .unique-card, .gallery-item, .testimonial-card, .play-button');
     interactives.forEach((el) => {
       el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
@@ -196,30 +189,37 @@
       sparkleThrottle++;
       if (sparkleThrottle % 3 !== 0) return;
       const sparkle = document.createElement('div');
+      const dx = (Math.random() * 20 - 10).toFixed(1);
+      const dy = (Math.random() * 20 - 10).toFixed(1);
       sparkle.style.cssText = `
         position:fixed;left:${e.clientX}px;top:${e.clientY}px;
         width:4px;height:4px;border-radius:50%;pointer-events:none;z-index:9998;
         background:${Math.random() > 0.5 ? '#E91E8C' : '#D4AF37'};
         animation:cursorSparkle 0.6s ease forwards;
+        --dx:${dx}px;--dy:${dy}px;
       `;
       document.body.appendChild(sparkle);
       setTimeout(() => sparkle.remove(), 600);
     });
 
-    // Add sparkle keyframes
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes cursorSparkle {
-        0% { opacity:1; transform:scale(1) translate(0,0); }
-        100% { opacity:0; transform:scale(0) translate(${Math.random()*20-10}px,${Math.random()*20-10}px); }
-      }
-    `;
-    document.head.appendChild(style);
+    // Add sparkle keyframes once
+    if (!document.getElementById('sparkle-style')) {
+      const style = document.createElement('style');
+      style.id = 'sparkle-style';
+      style.textContent = `
+        @keyframes cursorSparkle {
+          0% { opacity:1; transform:scale(1) translate(0,0); }
+          100% { opacity:0; transform:scale(0) translate(var(--dx,5px),var(--dy,5px)); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
   }
 
   // --- Floating Musical Notes ---
   function initFloatingNotes() {
     const container = document.getElementById('floating-notes');
+    if (!container) return;
     const notes = ['♪', '♫', '♬', '♩', '★', '✦'];
     function spawnNote() {
       const note = document.createElement('div');
@@ -233,7 +233,6 @@
       setTimeout(() => note.remove(), 16000);
     }
     setInterval(spawnNote, 3000);
-    // Spawn a few immediately
     for (let i = 0; i < 4; i++) setTimeout(spawnNote, i * 500);
   }
 
@@ -241,6 +240,7 @@
   function initParallax() {
     const hero = document.querySelector('.hero-bg');
     const spotlights = document.querySelectorAll('.spotlight');
+    if (!hero) return;
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       if (y < window.innerHeight) {
@@ -255,6 +255,7 @@
   // --- Count Up Animation ---
   function initCountUp() {
     const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -293,7 +294,7 @@
     });
   }
 
-  // --- Smooth Scroll ---
+  // --- Smooth Scroll (for same-page anchors) ---
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', (e) => {

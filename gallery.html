@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — The BeatGirls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="gallery">
+<div id="cursor" class="custom-cursor"></div>
+<div id="cursor-trail"></div>
+<div id="floating-notes" aria-hidden="true"></div>
+
+<nav id="navbar" class="navbar scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">The<span>BeatGirls</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="shows.html">Shows</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container">
+    <div class="breadcrumbs reveal"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span> <span>Gallery</span></div>
+    <h1 class="page-header-title reveal">Photo <span class="gradient-text">Gallery</span></h1>
+    <p class="page-header-sub reveal">The glamour, the stage, the magic — captured in every frame.</p>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="section gallery">
+  <div class="container">
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" style="--i:1"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#D4AF37)"><span>Performance Shot</span></div></div>
+      <div class="gallery-item reveal" style="--i:2"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#4A0E4E,#E91E8C)"><span>Stage Glamour</span></div></div>
+      <div class="gallery-item reveal" style="--i:3"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#D4AF37,#E91E8C)"><span>Live Band Show</span></div></div>
+      <div class="gallery-item reveal" style="--i:4"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#4A0E4E)"><span>Wedding Performance</span></div></div>
+      <div class="gallery-item reveal" style="--i:5"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#1a1a2e,#D4AF37)"><span>Corporate Event</span></div></div>
+      <div class="gallery-item reveal" style="--i:6"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#D4AF37,#4A0E4E)"><span>Festival Stage</span></div></div>
+      <div class="gallery-item reveal" style="--i:7"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#4A0E4E,#D4AF37)"><span>Backstage Glam</span></div></div>
+      <div class="gallery-item reveal" style="--i:8"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#D4AF37,#4A0E4E)"><span>The Trio</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Showreel -->
+<section class="section showreel">
+  <div class="container">
+    <span class="section-label reveal center">See Us In Action</span>
+    <h2 class="section-title reveal center">The <span class="gradient-text">Showreel</span></h2>
+    <div class="showreel-wrapper reveal">
+      <div class="showreel-frame">
+        <div class="showreel-placeholder">
+          <div class="play-button">
+            <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="38" fill="none" stroke="var(--gold)" stroke-width="2"/><polygon points="32,24 60,40 32,56" fill="var(--gold)"/></svg>
+          </div>
+          <p>Showreel Video</p>
+        </div>
+      </div>
+      <div class="showreel-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="container">
+    <div class="cta-banner-content reveal">
+      <h2 class="section-title center">Like What You See? <span class="gradient-text">Let's Talk.</span></h2>
+      <p class="center" style="color:var(--gray);max-width:600px;margin:0 auto 32px;">Book The BeatGirls for your next event and experience the magic live.</p>
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn btn-primary">Book Us Now ✨</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">The<span>BeatGirls</span></div>
+        <p>NZ's Favourite Girl Group<br>Adrenaline on high heels!</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="shows.html">Shows</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Book Us</a>
+      </div>
+      <div class="footer-links">
+        <h4>Shows</h4>
+        <a href="shows.html">Live Band</a>
+        <a href="shows.html">Events</a>
+        <a href="shows.html">Weddings</a>
+        <a href="shows.html#repertoire">Repertoire</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The BeatGirls. All rights reserved.</p>
+      <p>Designed by <a href="https://wingfieldgemini.github.io" target="_blank" rel="noopener">WingfieldGemini</a></p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
