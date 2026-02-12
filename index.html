@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The BeatGirls — NZ's Favourite Girl Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Loading Screen -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">The<span>BeatGirls</span></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <p class="loader-tagline">Adrenaline on high heels!</p>
+  </div>
+</div>
+
+<!-- Custom Cursor -->
+<div id="cursor" class="custom-cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- Floating Musical Notes -->
+<div id="floating-notes" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav id="navbar" class="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">The<span>BeatGirls</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#showreel">Showreel</a></li>
+      <li><a href="#repertoire">Repertoire</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking" class="nav-cta">Book Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-bg"></div>
+  <canvas id="sparkleCanvas" class="sparkle-canvas"></canvas>
+  <div class="spotlight spotlight-1"></div>
+  <div class="spotlight spotlight-2"></div>
+  <div class="spotlight spotlight-3"></div>
+  <div class="hero-content">
+    <p class="hero-pre reveal">★ Adrenaline on High Heels ★</p>
+    <h1 class="hero-title reveal">
+      <span class="hero-title-line">NZ's Favourite</span>
+      <span class="hero-title-line accent">Girl Group</span>
+    </h1>
+    <p class="hero-sub reveal">Three powerhouse vocalists. Jaw-dropping choreography. Outrageous costumes. One unforgettable show.</p>
+    <div class="hero-ctas reveal">
+      <a href="#booking" class="btn btn-primary">Book Us</a>
+      <a href="#showreel" class="btn btn-secondary">Watch Showreel</a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="image-placeholder about-placeholder">
+          <div class="placeholder-icon">♪</div>
+          <span>The BeatGirls</span>
+        </div>
+        <div class="about-image-accent"></div>
+      </div>
+      <div class="about-content">
+        <span class="section-label reveal">Who We Are</span>
+        <h2 class="section-title reveal">Three Voices.<br><span class="gradient-text">One Incredible Show.</span></h2>
+        <p class="reveal">The BeatGirls are New Zealand's most in-demand girl group — a trio of extraordinary vocalists who bring the house down every single time. With powerhouse harmonies, electrifying choreography, and costumes that have to be seen to be believed, they deliver a show that's equal parts Vegas spectacle and soulful musical mastery.</p>
+        <p class="reveal">From intimate weddings to massive corporate events and festivals, The BeatGirls customise every performance to fit your vision. Their energy is contagious, their talent is undeniable, and their wild wigs are absolutely legendary.</p>
+        <div class="about-stats reveal">
+          <div class="stat">
+            <span class="stat-number" data-count="100">0</span><span class="stat-suffix">s+</span>
+            <span class="stat-label">Weddings</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Powerhouse Vocalists</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Energy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shows Section -->
+<section id="shows" class="section shows">
+  <div class="container">
+    <span class="section-label reveal center">What We Do</span>
+    <h2 class="section-title reveal center">Shows That <span class="gradient-text">Stop The Room</span></h2>
+    <p class="section-intro reveal center">Every performance is tailored, every moment is electric. Choose your experience.</p>
+    <div class="shows-grid">
+      <div class="show-card reveal">
+        <div class="show-card-glow"></div>
+        <div class="show-card-icon">🎤</div>
+        <h3>BeatGirls with Live Band</h3>
+        <p>The ultimate live music experience. The BeatGirls backed by a full live band, tearing through Motown classics, soul anthems, Amy Winehouse hits, and non-stop disco bangers. This is the show that fills dance floors and creates memories.</p>
+        <ul class="show-tags">
+          <li>Motown</li><li>Soul</li><li>Amy Winehouse</li><li>Disco</li>
+        </ul>
+      </div>
+      <div class="show-card reveal">
+        <div class="show-card-glow"></div>
+        <div class="show-card-icon">🎉</div>
+        <h3>Events</h3>
+        <p>Corporate functions, private parties, festivals — The BeatGirls bring the wow factor to any occasion. Shows are fully customisable to match your theme, your brand, and your vision. From elegant cocktail sets to full-blown dance parties.</p>
+        <ul class="show-tags">
+          <li>Corporate</li><li>Private</li><li>Festivals</li><li>Custom Themes</li>
+        </ul>
+      </div>
+      <div class="show-card reveal">
+        <div class="show-card-glow"></div>
+        <div class="show-card-icon">💍</div>
+        <h3>Weddings</h3>
+        <p>With hundreds of weddings performed, The BeatGirls know exactly how to make your big day unforgettable. From ceremony to reception, they've got every moment covered — and yes, one of the girls is a registered celebrant who can marry you in style!</p>
+        <ul class="show-tags">
+          <li>Ceremony</li><li>Reception</li><li>Celebrant</li><li>Hundreds Performed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showreel Section -->
+<section id="showreel" class="section showreel">
+  <div class="container">
+    <span class="section-label reveal center">See Us In Action</span>
+    <h2 class="section-title reveal center">The <span class="gradient-text">Showreel</span></h2>
+    <div class="showreel-wrapper reveal">
+      <div class="showreel-frame">
+        <div class="showreel-placeholder">
+          <div class="play-button">
+            <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="38" fill="none" stroke="var(--gold)" stroke-width="2"/><polygon points="32,24 60,40 32,56" fill="var(--gold)"/></svg>
+          </div>
+          <p>Showreel Video</p>
+        </div>
+      </div>
+      <div class="showreel-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Repertoire Section -->
+<section id="repertoire" class="section repertoire">
+  <div class="container">
+    <span class="section-label reveal center">The Music</span>
+    <h2 class="section-title reveal center">Our <span class="gradient-text">Repertoire</span></h2>
+    <p class="section-intro reveal center">From Motown legends to disco floor-fillers — we bring the hits that everyone loves.</p>
+    <div class="repertoire-grid">
+      <div class="repertoire-category reveal">
+        <h3>🎵 Disco & Funk</h3>
+        <ul>
+          <li>You Should Be Dancing</li>
+          <li>Le Freak</li>
+          <li>Night Fever</li>
+          <li>I Will Survive</li>
+          <li>Funkytown</li>
+          <li>Shake Your Booty</li>
+          <li>Young Hearts Run Free</li>
+        </ul>
+      </div>
+      <div class="repertoire-category reveal">
+        <h3>🎤 Soul & Motown</h3>
+        <ul>
+          <li>Ain't No Mountain High Enough</li>
+          <li>Respect</li>
+          <li>Stop! In The Name Of Love</li>
+          <li>Heatwave</li>
+          <li>Chain of Fools</li>
+          <li>Dancing In The Street</li>
+          <li>My Girl</li>
+        </ul>
+      </div>
+      <div class="repertoire-category reveal">
+        <h3>💃 Modern Classics</h3>
+        <ul>
+          <li>Valerie — Amy Winehouse</li>
+          <li>Rehab — Amy Winehouse</li>
+          <li>Back to Black — Amy Winehouse</li>
+          <li>Crazy In Love</li>
+          <li>Rolling In The Deep</li>
+          <li>Proud Mary</li>
+          <li>& many more…</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section testimonials">
+  <div class="container">
+    <span class="section-label reveal center">What People Say</span>
+    <h2 class="section-title reveal center">Rave <span class="gradient-text">Reviews</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-shimmer"></div>
+        <div class="testimonial-quote">"</div>
+        <p>I took the kids to the 'We'll Meet Again' Anzac concert at Wellington's Town Hall. It was a cracker and from what I could tell, the full house couldn't believe its luck.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-line"></div>
+          <span>The Dominion Post</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-shimmer"></div>
+        <div class="testimonial-quote">"</div>
+        <p>The dance floor was full all night, people couldn't get enough! Expect to get some more bookings from last night, world class entertainment thank you!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-line"></div>
+          <span>Wedding, Waiheke Island</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-shimmer"></div>
+        <div class="testimonial-quote">"</div>
+        <p>It was clear the girls enjoyed themselves as much as we did and this certainly contributed to the huge success of our weekend, with many of our members saying it was 'the best rally ever!'</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-line"></div>
+          <span>BMW Owners Register of New Zealand</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="section gallery">
+  <div class="container">
+    <span class="section-label reveal center">The Glamour</span>
+    <h2 class="section-title reveal center">Photo <span class="gradient-text">Gallery</span></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" style="--i:1"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#D4AF37)"><span>Performance Shot</span></div></div>
+      <div class="gallery-item reveal" style="--i:2"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#4A0E4E,#E91E8C)"><span>Stage Glamour</span></div></div>
+      <div class="gallery-item reveal" style="--i:3"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#D4AF37,#E91E8C)"><span>Live Band Show</span></div></div>
+      <div class="gallery-item reveal" style="--i:4"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#4A0E4E)"><span>Wedding Performance</span></div></div>
+      <div class="gallery-item reveal" style="--i:5"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#1a1a2e,#D4AF37)"><span>Corporate Event</span></div></div>
+      <div class="gallery-item reveal" style="--i:6"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#D4AF37,#4A0E4E)"><span>Festival Stage</span></div></div>
+      <div class="gallery-item reveal" style="--i:7"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#4A0E4E,#D4AF37)"><span>Backstage Glam</span></div></div>
+      <div class="gallery-item reveal" style="--i:8"><div class="gallery-placeholder" style="--g:linear-gradient(135deg,#E91E8C,#D4AF37,#4A0E4E)"><span>The Trio</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking CTA Section -->
+<section id="booking" class="section booking">
+  <div class="booking-spotlight"></div>
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-content">
+        <span class="section-label reveal">Let's Do This</span>
+        <h2 class="section-title reveal">Make Your Event<br><span class="gradient-text">Unforgettable</span></h2>
+        <p class="reveal">Ready to bring the house down? Whether it's a wedding, corporate event, or private party, The BeatGirls will make it a night nobody forgets. Tell us about your event and let's create something spectacular together.</p>
+        <div class="booking-features reveal">
+          <div class="booking-feature">✓ Customised show themes</div>
+          <div class="booking-feature">✓ Celebrant services available</div>
+          <div class="booking-feature">✓ Full live band option</div>
+          <div class="booking-feature">✓ NZ-wide availability</div>
+        </div>
+      </div>
+      <div class="booking-form-wrapper reveal">
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder=" " required>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder=" ">
+            <label for="phone">Phone Number</label>
+          </div>
+          <div class="form-group">
+            <select id="eventType" required>
+              <option value="" disabled selected>Event Type</option>
+              <option>Wedding</option>
+              <option>Corporate Event</option>
+              <option>Private Party</option>
+              <option>Festival</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="date" id="eventDate">
+            <label for="eventDate" class="date-label">Event Date</label>
+          </div>
+          <div class="form-group full">
+            <textarea id="message" rows="4" placeholder=" "></textarea>
+            <label for="message">Tell Us About Your Event</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Enquiry ✨</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Get In Touch</h3>
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:hello@thebeatgirls.co.nz">hello@thebeatgirls.co.nz</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+6421000000">+64 21 000 0000</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>New Zealand — Nationwide</span>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="24" height="24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="#000"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V12.8a8.22 8.22 0 005.58 2.17V11.5a4.84 4.84 0 01-3.77-1.83V6.69z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <div class="image-placeholder map-placeholder">
+          <div class="placeholder-icon">🗺️</div>
+          <span>Serving all of New Zealand</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">The<span>BeatGirls</span></div>
+        <p>NZ's Favourite Girl Group<br>Adrenaline on high heels!</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#about">About</a>
+        <a href="#shows">Shows</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book Us</a>
+      </div>
+      <div class="footer-links">
+        <h4>Shows</h4>
+        <a href="#shows">Live Band</a>
+        <a href="#shows">Events</a>
+        <a href="#shows">Weddings</a>
+        <a href="#repertoire">Repertoire</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The BeatGirls. All rights reserved.</p>
+      <p>Designed by <a href="https://wingfieldgemini.github.io" target="_blank" rel="noopener">WingfieldGemini</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
